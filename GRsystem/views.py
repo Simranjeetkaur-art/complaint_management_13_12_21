@@ -149,8 +149,9 @@ def complaints(request):
                instance=complaint_form.save(commit=False)
                instance.user=request.user
                mail=request.user.email
+               print('email sent')
                print(mail)
-               send_mail('Hi \n Complaint has been Received', 'Thank you for letting us know of your concern, Have a Cookie while we explore into this matter. \n Dont Reply to this mail', 'testerpython13@gmail.com', [mail],fail_silently=False)
+               send_mail('Hi  Complaint has been Received', 'Thank you for letting us know of your concern, Have a Cookie while we explore into this matter. Dont Reply to this mail', 'simranjeet.e11096@cumail.in', [mail],fail_silently=False)
                instance.save()
                
                messages.add_message(request,messages.SUCCESS, f'Complaint Registered!!!')

@@ -153,12 +153,16 @@ LOGIN_URL = 'signin'
 LOGOUT_URL='logout'
 SESSION_EXPIRE_AT_BROWSER_CLOSE=  True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
+
+#  Simran's SMTP credentials
+EMAIL_HOST='email-smtp.ap-south-1.amazonaws.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER = ''# add email address here
-EMAIL_HOST_PASSWORD = ''  #email password
-DEFAULT_FROM_EMAIL = ''# add email address here
+EMAIL_HOST_USER = 'AKIAVZW6WQNEXLWHBFUF'# add email address here
+EMAIL_HOST_PASSWORD = 'BHGN1QBSPFg2axSDPcTuJAOun3xDTv/CoVd6vjjtzZNw'  #email password
+DEFAULT_FROM_EMAIL = 'simranjeet.e11096@cumail.in'# add email address here
 EMAIL_USE_TLS = True
+
+
 
 #EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -177,3 +181,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django_ses.SESBackend'
+AWS_ACCESS_KEY_ID = 'YOUR-ACCESS-KEY-ID'
+AWS_SECRET_ACCESS_KEY = 'YOUR-SECRET-ACCESS-KEY'
+AWS_SES_REGION_NAME = 'REGION-NAME' #(ex: us-east-2)
+AWS_SES_REGION_ENDPOINT ='REGION-ENDPOINT' #(ex: email.us-east-2.amazonaws.com)
